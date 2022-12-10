@@ -10,7 +10,7 @@ public class uimanager : MonoBehaviour
 {
     private enum MainMenuTabs
     {
-        MainTab, DeckTab
+        MainTab, DeckTab, LeaderboardTab
     }
     private enum State
     {
@@ -31,10 +31,12 @@ public class uimanager : MonoBehaviour
     [Header("Main Menu")]
     [SerializeField] private RectTransform mainTab;
     [SerializeField] private RectTransform deckTab;
+    [SerializeField] private RectTransform leaderboardTab;
+    public GameObject[] leaderboardPlates;
     public GameObject[] difficultyButtons;
-    [SerializeField] private Button sleepyButton;
-    [SerializeField] private Button mightyButton;
-    [SerializeField] private Button legendaryButton;
+    [SerializeField] private Button sleepyButton;   // turhia?
+    [SerializeField] private Button mightyButton;   // turhia?
+    [SerializeField] private Button legendaryButton;   // turhia?
     public TMP_Text mainMenuHighScoreText;
     public TMP_Text deckTabMoneyText;
     [SerializeField] private Image cannotPlayPanel;
@@ -468,6 +470,23 @@ public class uimanager : MonoBehaviour
             mainMenuTabs = MainMenuTabs.MainTab;
         }
     }
+    public void LeaderboardTabOnOff()
+    {
+        ButtonClickAudio();
+        if (mainMenuTabs == MainMenuTabs.MainTab)
+        {
+            mainTab.DOLocalMoveX(1080, .5f, true);
+            leaderboardTab.DOLocalMoveX(0, .5f, true);
+            mainMenuTabs = MainMenuTabs.LeaderboardTab;
+            StartCoroutine("ScoreBoardPlatePops");
+        }
+        else
+        {
+            mainTab.DOLocalMoveX(0, .5f, true);
+            leaderboardTab.DOLocalMoveX(-1080, .5f, true);
+            mainMenuTabs = MainMenuTabs.MainTab;
+        }
+    }
     public IEnumerator CannotStartGame()
     {
         cannotPlayPanel.rectTransform.DOScale(Vector3.one, .5f).SetEase(Ease.OutBounce);
@@ -489,6 +508,22 @@ public class uimanager : MonoBehaviour
         {
             SpawnCardAudio();
             card.transform.DOScale(Vector3.one, .3f).SetEase(Ease.OutBounce);
+            yield return new WaitForSeconds(.1f);
+        }
+    }
+    IEnumerator ScoreBoardPlatePops()
+    {
+        foreach (GameObject plate in leaderboardPlates)
+        {
+            plate.transform.localScale = Vector3.zero;
+        }
+
+        yield return new WaitForSeconds(.1f);
+
+        foreach (GameObject plate in leaderboardPlates)
+        {
+            SpawnCardAudio();
+            plate.transform.DOScale(Vector3.one, .3f).SetEase(Ease.OutBounce);
             yield return new WaitForSeconds(.1f);
         }
     }
