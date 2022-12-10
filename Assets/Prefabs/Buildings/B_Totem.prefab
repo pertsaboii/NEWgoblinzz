@@ -1060,7 +1060,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 400
+        scalar: 150
         minScalar: 30
         maxCurve:
           serializedVersion: 2
@@ -5007,7 +5007,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healingInterval: 2
   unitHealAmount: 3
-  buildingHealAmount: 2
+  buildingHealAmount: 1
   healingRange: 12
   healingBarSprite: {fileID: 8481251567207670242}
   healingBar: {fileID: 8481251566813565936}
