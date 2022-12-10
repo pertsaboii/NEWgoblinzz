@@ -2915,6 +2915,7 @@ MonoBehaviour:
   runTimeUpPanel: {fileID: 422541355}
   mainTab: {fileID: 0}
   deckTab: {fileID: 0}
+  difficultyButtons: []
   sleepyButton: {fileID: 0}
   mightyButton: {fileID: 0}
   legendaryButton: {fileID: 0}
@@ -10126,17 +10127,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a03243f3d9f5f3a49a7d9c7e4d67d124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  difficulty: 1
   highScore: 0
   money: 0
   cardIDs: 
   deckCards: 
   gameStartedFirstTime: 0
+  difficulty: 1
   easyModeMoneyMult: 0.8
   hardModeMoneyMult: 1.2
   moneyMult: 0
   purchasedCards: []
-  cardsOnDeck: []
+  cardsOnDeck:
+  - {fileID: 5627627272792343555, guid: eee091b57fe08df4482acbfe7ca55362, type: 3}
+  - {fileID: 5627627272792343555, guid: 7c4b6922c1fda3b4ca8f6687a81a811b, type: 3}
+  - {fileID: 5627627272792343555, guid: fe355b85cbc4ba74ab747266314be8d7, type: 3}
+  - {fileID: 5627627272792343555, guid: e212a476e27813546bb18855299e030d, type: 3}
+  - {fileID: 5627627272792343555, guid: 8aa46fb0a0195004893bf90944e0370c, type: 3}
+  - {fileID: 5627627272792343555, guid: b06b3240619cda845a058653ac6c0c42, type: 3}
+  - {fileID: 5627627272792343555, guid: e3f25a6d0c1f3a74aba4051ede1abefa, type: 3}
+  - {fileID: 5627627272792343555, guid: 3463d7ebe0c102743874878342867b93, type: 3}
+  - {fileID: 5627627272792343555, guid: 0a4e5085270b69a4f8f2cc214f464eb4, type: 3}
 --- !u!4 &2048307453
 Transform:
   m_ObjectHideFlags: 0

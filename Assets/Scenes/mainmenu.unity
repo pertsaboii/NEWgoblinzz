@@ -640,6 +640,12 @@ PrefabInstance:
       value: Some might call this a pile of wood, but goblins call it a wall. Works
         as an obstacle for enemies nevertheless.
       objectReference: {fileID: 0}
+    - target: {fileID: 2483704837671931921, guid: 219a307dbef06e241a18190c11b5ec35,
+        type: 3}
+      propertyPath: infoPanelVideo
+      value: 
+      objectReference: {fileID: 32900000, guid: 177743d36d80f2b4e8e2d25d776ee494,
+        type: 3}
     - target: {fileID: 2483704837671931923, guid: 219a307dbef06e241a18190c11b5ec35,
         type: 3}
       propertyPath: m_Name
@@ -2039,6 +2045,12 @@ PrefabInstance:
       propertyPath: infoPanelText
       value: This trap deals serious damage to anyone who walks over it.
       objectReference: {fileID: 0}
+    - target: {fileID: 2483704837671931921, guid: 219a307dbef06e241a18190c11b5ec35,
+        type: 3}
+      propertyPath: infoPanelVideo
+      value: 
+      objectReference: {fileID: 32900000, guid: cad3f43bbc6ce0346bcc6913e297d4ec,
+        type: 3}
     - target: {fileID: 2483704837671931923, guid: 219a307dbef06e241a18190c11b5ec35,
         type: 3}
       propertyPath: m_Name
@@ -2116,10 +2128,10 @@ VideoPlayer:
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: <noninit>
   m_RenderMode: 2
-  m_AspectRatio: 2
+  m_AspectRatio: 5
   m_DataSource: 0
-  m_PlaybackSpeed: 1
-  m_AudioOutputMode: 2
+  m_PlaybackSpeed: 1.1
+  m_AudioOutputMode: 0
   m_TargetAudioSources:
   - {fileID: 0}
   m_DirectAudioVolumes:
@@ -2131,7 +2143,7 @@ VideoPlayer:
   m_PlayOnAwake: 1
   m_SkipOnDrop: 1
   m_Looping: 1
-  m_WaitForFirstFrame: 1
+  m_WaitForFirstFrame: 0
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
 --- !u!114 &420527363
@@ -2278,7 +2290,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -250}
+  m_AnchoredPosition: {x: 0, y: -260}
   m_SizeDelta: {x: 740, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &458675536
@@ -2301,7 +2313,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: DescriptiontextDescriptiontextDescriptiontextDescriptiontextDescriptiontextDescriptiontextDescriptiontextDescriptiontextDescriptiontextDescriptiontextDescriptiontextDescriptiontext
+  m_text: DescriptiontextDescriptiontextDescriptiontextDescriptiontextDescriptiontextDescriptiontextDescriptiontextDescriptiontextDescriptiontext
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e6646776bb48f9a46b3a34863e311150, type: 2}
   m_sharedMaterial: {fileID: -1733793114054490980, guid: e6646776bb48f9a46b3a34863e311150,
@@ -2329,8 +2341,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 45
+  m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2550,7 +2562,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -30}
-  m_SizeDelta: {x: 400, y: 100}
+  m_SizeDelta: {x: 600, y: 100}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &484286031
 MonoBehaviour:
@@ -2600,8 +2612,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 70
+  m_fontSizeBase: 70
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4726,6 +4738,12 @@ PrefabInstance:
       propertyPath: infoPanelText
       value: A tree hut from which goblins will shoot arrows at any nearby enemies.
       objectReference: {fileID: 0}
+    - target: {fileID: 2483704837671931921, guid: 219a307dbef06e241a18190c11b5ec35,
+        type: 3}
+      propertyPath: infoPanelVideo
+      value: 
+      objectReference: {fileID: 32900000, guid: da905832c62dc2c4a8c6f877ec792f55,
+        type: 3}
     - target: {fileID: 2483704837671931923, guid: 219a307dbef06e241a18190c11b5ec35,
         type: 3}
       propertyPath: m_Name
@@ -4883,6 +4901,12 @@ PrefabInstance:
       value: An angry troll whose attacks deal damage around him. Can also take some
         serious damage before going down.
       objectReference: {fileID: 0}
+    - target: {fileID: 2483704837671931921, guid: 219a307dbef06e241a18190c11b5ec35,
+        type: 3}
+      propertyPath: infoPanelVideo
+      value: 
+      objectReference: {fileID: 32900000, guid: f6ac713791e247341bc3059c8cde4cea,
+        type: 3}
     - target: {fileID: 2483704837671931923, guid: 219a307dbef06e241a18190c11b5ec35,
         type: 3}
       propertyPath: m_Name
@@ -6969,7 +6993,7 @@ PrefabInstance:
     - target: {fileID: 2483704837671931921, guid: 219a307dbef06e241a18190c11b5ec35,
         type: 3}
       propertyPath: unitName
-      value: Bloated Gobbo
+      value: Bloated Goblin
       objectReference: {fileID: 0}
     - target: {fileID: 2483704837671931921, guid: 219a307dbef06e241a18190c11b5ec35,
         type: 3}
@@ -6988,6 +7012,12 @@ PrefabInstance:
       value: This confused goblin won't attack enemies, but can take some hits and
         will explode upon death.
       objectReference: {fileID: 0}
+    - target: {fileID: 2483704837671931921, guid: 219a307dbef06e241a18190c11b5ec35,
+        type: 3}
+      propertyPath: infoPanelVideo
+      value: 
+      objectReference: {fileID: 32900000, guid: 0af2c8c3502c3a64b9f08b603fe63b57,
+        type: 3}
     - target: {fileID: 2483704837671931923, guid: 219a307dbef06e241a18190c11b5ec35,
         type: 3}
       propertyPath: m_Name
@@ -7414,7 +7444,7 @@ PrefabInstance:
     - target: {fileID: 2483704837671931921, guid: 219a307dbef06e241a18190c11b5ec35,
         type: 3}
       propertyPath: unitName
-      value: Ranged Gobbo
+      value: Ranged Goblin
       objectReference: {fileID: 0}
     - target: {fileID: 2483704837671931921, guid: 219a307dbef06e241a18190c11b5ec35,
         type: 3}
@@ -7432,6 +7462,12 @@ PrefabInstance:
       propertyPath: infoPanelText
       value: A lightweight goblin who hurls spears at enemies!
       objectReference: {fileID: 0}
+    - target: {fileID: 2483704837671931921, guid: 219a307dbef06e241a18190c11b5ec35,
+        type: 3}
+      propertyPath: infoPanelVideo
+      value: 
+      objectReference: {fileID: 32900000, guid: a431f2c12a45bfc40924b22a4d98b25d,
+        type: 3}
     - target: {fileID: 2483704837671931923, guid: 219a307dbef06e241a18190c11b5ec35,
         type: 3}
       propertyPath: m_Name
@@ -8953,6 +8989,12 @@ PrefabInstance:
       propertyPath: infoPanelText
       value: A very fancy totem which heals everything in it's range on time intervals.
       objectReference: {fileID: 0}
+    - target: {fileID: 2483704837671931921, guid: 219a307dbef06e241a18190c11b5ec35,
+        type: 3}
+      propertyPath: infoPanelVideo
+      value: 
+      objectReference: {fileID: 32900000, guid: 10458986ac8f77c408b7afe20717a41a,
+        type: 3}
     - target: {fileID: 2483704837671931923, guid: 219a307dbef06e241a18190c11b5ec35,
         type: 3}
       propertyPath: m_Name
@@ -9695,9 +9737,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Buy cards to add them to your deck.
-
-    Tap card for card info.'
+  m_text: Buy cards to unlock them. Unlocked cards can be added to your deck. Tap
+    card for card info.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e6646776bb48f9a46b3a34863e311150, type: 2}
   m_sharedMaterial: {fileID: -1733793114054490980, guid: e6646776bb48f9a46b3a34863e311150,
@@ -10222,6 +10263,12 @@ PrefabInstance:
       value: Stinkiest mushroom in the kingdom. Emits poisonous gas when stepped
         over.
       objectReference: {fileID: 0}
+    - target: {fileID: 2483704837671931921, guid: 219a307dbef06e241a18190c11b5ec35,
+        type: 3}
+      propertyPath: infoPanelVideo
+      value: 
+      objectReference: {fileID: 32900000, guid: fa403cf8e64b3d344b933d120d648698,
+        type: 3}
     - target: {fileID: 2483704837671931923, guid: 219a307dbef06e241a18190c11b5ec35,
         type: 3}
       propertyPath: m_Name
@@ -10906,9 +10953,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2483704837671931921, guid: 219a307dbef06e241a18190c11b5ec35,
         type: 3}
+      propertyPath: unitName
+      value: Melee Goblin
+      objectReference: {fileID: 0}
+    - target: {fileID: 2483704837671931921, guid: 219a307dbef06e241a18190c11b5ec35,
+        type: 3}
       propertyPath: infoPanelText
       value: A Fierce melee fighter. Not too smart but overwhelmingly brave.
       objectReference: {fileID: 0}
+    - target: {fileID: 2483704837671931921, guid: 219a307dbef06e241a18190c11b5ec35,
+        type: 3}
+      propertyPath: infoPanelVideo
+      value: 
+      objectReference: {fileID: 32900000, guid: 540f6bebb81bb0349b252cc2e0094e40,
+        type: 3}
     - target: {fileID: 2483704837671931923, guid: 219a307dbef06e241a18190c11b5ec35,
         type: 3}
       propertyPath: m_Name
