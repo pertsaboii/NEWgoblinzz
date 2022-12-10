@@ -9,8 +9,8 @@ public class Card : MonoBehaviour
     public float cost;
     private string cardPlace;
 
-    // nämä korvautuu mustavalkokuvalla myöhemmin
-    [SerializeField] private Image insufFundsImage;
+    public Image mainImage;
+    public Image insufFundsImage;
     public Image costCircle;
     private Color32 originalCircleColor;
 

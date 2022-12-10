@@ -7,7 +7,7 @@ using DG.Tweening;
 [RequireComponent(typeof(ALL_Death))]
 public class ALL_Health : MonoBehaviour
 {
-    [SerializeField] private float maxHealth;
+    public float maxHealth;
     public float currentHealth;
 
     [SerializeField] private Image hpSprite;

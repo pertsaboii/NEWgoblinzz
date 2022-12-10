@@ -7,7 +7,7 @@ public class VolumeSlider : MonoBehaviour
 {
     private Slider slider;
     [SerializeField] private bool UIVolumeSlider, masterVolumeSlider, SFXVolumeSlider, musicVolumeSlider;
-    void Start()
+    private void OnEnable()
     {
         slider = GetComponent<Slider>();
 
@@ -36,7 +36,7 @@ public class VolumeSlider : MonoBehaviour
             //SoundManager.Instance.ChangeMusicVolume(slider.value);
         }
     }
-    private void OnEnable()
+    /*private void OnEnable()
     {
         if (slider == null) slider = GetComponent<Slider>();
 
@@ -56,5 +56,5 @@ public class VolumeSlider : MonoBehaviour
         {
             if (slider.value != SoundManager.Instance.MusicVol) slider.value = SoundManager.Instance.MusicVol;
         }
-    }
+    }*/
 }

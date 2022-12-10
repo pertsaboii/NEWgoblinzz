@@ -104,7 +104,7 @@ public class MultiScene : MonoBehaviour
         }
         if (gameStartedFirstTime == false)
         {
-            money = 300;
+            money = 600;
             gameStartedFirstTime = true;
         }
         UpdateDifficulty(difficulty);
@@ -115,7 +115,7 @@ public class MultiScene : MonoBehaviour
         {
             File.Delete(Application.persistentDataPath + "/playerInfo.dat");
         }
-        money = 300;
+        money = 600;
         highScore = 0;
         gameStartedFirstTime = true;
         foreach (GameObject deckTabCard in gamemanager.userInterface.deckTabCards)

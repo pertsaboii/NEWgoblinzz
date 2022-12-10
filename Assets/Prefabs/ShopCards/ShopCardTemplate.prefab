@@ -59,7 +59,7 @@ MonoBehaviour:
   infoPanelVideo: {fileID: 32900000, guid: 47e6a61ab0062874185775d91bef1494, type: 3}
   selectedPanel: {fileID: 2483704839238412640}
   purResCostText: {fileID: 2483704837781404813}
-  purchasedImage: {fileID: 0}
+  purchasedImage: {fileID: 2483704838027790442}
   toDeckButton: {fileID: 6780961702791946509}
   notInDeckColor:
     serializedVersion: 2
@@ -72,7 +72,7 @@ MonoBehaviour:
   notPurchasedCard: {fileID: 3659634296551200397}
   notPurResCostText: {fileID: 3659634296689683627}
   purchaseCostText: {fileID: 2483704838967172458}
-  notPurchasedImage: {fileID: 0}
+  notPurchasedImage: {fileID: 3659634296551200399}
   purchaseButton: {fileID: 2483704839730467503}
   cardCost: 250
   unitSpawnSound: {fileID: 0}
@@ -353,7 +353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.066711634, g: 0.5188679, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -963,7 +963,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3584906, g: 0.3584906, b: 0.3584906, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

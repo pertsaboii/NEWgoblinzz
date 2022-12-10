@@ -48,6 +48,8 @@ public class ShopCard : MonoBehaviour
     {
         card = cardPrefab.GetComponent<Card>();
         resCircleColor.color = card.costCircle.color;
+        purchasedImage.sprite = card.mainImage.sprite;
+        notPurchasedImage.sprite = card.insufFundsImage.sprite;
         infoPanelButton.onClick.AddListener(OpenInfoPanel);
         if (MultiScene.multiScene.purchasedCards.Contains(cardPrefab) || MultiScene.multiScene.cardIDs.Contains(cardID)) PurchasedState();
         else NotPurchasedState();
@@ -62,7 +64,6 @@ public class ShopCard : MonoBehaviour
         notPurchasedCard.SetActive(true);
         purchaseButton.onClick.RemoveAllListeners();
         purchaseButton.onClick.AddListener(PurchaseCard);
-        // kun valmiit kuvat niin tänne koodi joka hakee kortin kuvat prefabista
     }
     void PurchasedState()
     {
@@ -82,7 +83,6 @@ public class ShopCard : MonoBehaviour
         purResCostText.text = card.cost.ToString();
         toDeckButton.onClick.RemoveAllListeners();
         toDeckButton.onClick.AddListener(CardOnOffDeck);
-        // kun valmiit kuvat niin tänne koodi joka hakee kortin kuvat prefabista
         notPurchasedCard.SetActive(false);
         state = State.Purchased;
         if (MultiScene.multiScene.cardsOnDeck.Contains(cardPrefab)) selectedPanel.transform.localScale = Vector3.one;
