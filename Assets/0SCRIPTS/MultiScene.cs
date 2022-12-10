@@ -53,6 +53,7 @@ public class MultiScene : MonoBehaviour
     }
     private void OnApplicationQuit()
     {
+        if (gamemanager.state != gamemanager.State.MainMenu && gamemanager.userInterface.score > highScore) highScore = gamemanager.userInterface.score; 
         Save();
     }
 

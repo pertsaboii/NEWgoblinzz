@@ -34,9 +34,6 @@ public class uimanager : MonoBehaviour
     [SerializeField] private RectTransform leaderboardTab;
     public GameObject[] leaderboardPlates;
     public GameObject[] difficultyButtons;
-    [SerializeField] private Button sleepyButton;   // turhia?
-    [SerializeField] private Button mightyButton;   // turhia?
-    [SerializeField] private Button legendaryButton;   // turhia?
     public TMP_Text mainMenuHighScoreText;
     public TMP_Text deckTabMoneyText;
     [SerializeField] private Image cannotPlayPanel;
@@ -49,6 +46,11 @@ public class uimanager : MonoBehaviour
     public TMP_Text scoreText;
     [SerializeField] private TMP_Text currentRunScore;
     [SerializeField] private TMP_Text newHighScoreText;
+    public TMP_InputField submitScoreName;
+    [SerializeField] private Button submitScoreButton;
+    [SerializeField] private GameObject submitPanel;
+    [SerializeField] private TMP_Text scoreSubmittedText;
+    [SerializeField] private TMP_Text submitPanelText;
 
     [Header("Money")]
     [SerializeField] private TMP_Text moneyText;
@@ -558,5 +560,25 @@ public class uimanager : MonoBehaviour
         runTimeMenuFade.GetComponent<Animator>().SetTrigger("Fade");
         yield return new WaitForSecondsRealtime(1);
         gamemanager.sceneManagement.MainMenu();
+    }
+    public void SubmitScore()
+    {
+        ButtonClickAudio();
+        if (submitScoreName.text.Length != 0)
+        {
+            StartCoroutine(gamemanager.leaderboardManager.SubmitScoreRoutine(score/*, submitScoreName.text*/));
+            StartCoroutine("ScoreSubmittedTween");
+        }
+    }
+    IEnumerator ScoreSubmittedTween()
+    {
+        submitPanel.transform.DORotate(new Vector3(90, 0, 0), .2f).SetUpdate(true);
+        yield return new WaitForSecondsRealtime(.2f);
+        submitPanelText.gameObject.SetActive(false);
+        submitScoreName.gameObject.SetActive(false);
+        submitScoreButton.gameObject.SetActive(false);
+        scoreSubmittedText.enabled = true;
+        submitPanel.transform.rotation = Quaternion.Euler(-90, 0, 0);
+        submitPanel.transform.DORotate(Vector3.zero, .2f).SetUpdate(true).SetEase(Ease.OutSine);
     }
 }

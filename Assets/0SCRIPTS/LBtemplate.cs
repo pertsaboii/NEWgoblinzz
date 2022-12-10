@@ -6,15 +6,7 @@ using TMPro;
 
 public class LBtemplate : MonoBehaviour
 {
-    public TMP_Text nameText;
-    public TMP_Text scoreText;
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
+    [HideInInspector] public TMP_Text nameText;
+    [HideInInspector] public TMP_Text scoreText;
+    [HideInInspector] public bool hasInfo;
 }

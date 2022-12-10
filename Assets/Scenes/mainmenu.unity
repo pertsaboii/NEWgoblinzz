@@ -3411,9 +3411,6 @@ MonoBehaviour:
   - {fileID: 630502381}
   - {fileID: 1939016257}
   - {fileID: 1431503157}
-  sleepyButton: {fileID: 630502383}
-  mightyButton: {fileID: 1939016259}
-  legendaryButton: {fileID: 1431503159}
   mainMenuHighScoreText: {fileID: 396463736}
   deckTabMoneyText: {fileID: 650868128}
   cannotPlayPanel: {fileID: 765640539}
@@ -3433,6 +3430,11 @@ MonoBehaviour:
   scoreText: {fileID: 0}
   currentRunScore: {fileID: 0}
   newHighScoreText: {fileID: 0}
+  submitScoreName: {fileID: 0}
+  submitScoreButton: {fileID: 0}
+  submitPanel: {fileID: 0}
+  scoreSubmittedText: {fileID: 0}
+  submitPanelText: {fileID: 0}
   moneyText: {fileID: 0}
   resourceSlider: {fileID: 0}
   refreshCooldown: 0
@@ -13924,6 +13926,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ScoreTemplate
+      objectReference: {fileID: 0}
+    - target: {fileID: 6043144460926388823, guid: d77274956e075cd4391cc782877d8ac2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6043144462626265955, guid: d77274956e075cd4391cc782877d8ac2,
         type: 3}

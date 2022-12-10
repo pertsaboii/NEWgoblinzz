@@ -5,10 +5,11 @@ using LootLocker.Requests;
 
 public class LBManager : MonoBehaviour
 {
-    int leaderboardID = 9429;
+    string key = "globalHighscore";
+    public LootLockerLeaderboardMember[] members;
     void Start()
     {
-        StartCoroutine("LoginRoutine");
+        StartCoroutine("LoginRoutine");       
     }
     IEnumerator LoginRoutine()
     {
@@ -28,12 +29,22 @@ public class LBManager : MonoBehaviour
             }
         });
         yield return new WaitWhile(() => done == false);
+        if (gamemanager.state == gamemanager.State.MainMenu) StartCoroutine(FetchTopHighscoresRoutine());
     }
-    IEnumerator SubmitScoreRoutine(int scoreToUpload)
+    public void SetPlayerName()
     {
+        LootLockerSDKManager.SetPlayerName(gamemanager.userInterface.submitScoreName.text, (response) =>
+        {
+            if (response.success) Debug.Log("player name changed");
+            else Debug.Log("could not change player name");
+        });
+    }
+    public IEnumerator SubmitScoreRoutine(float score/*, string playerName*/)
+    {
+        int scoreToUpload = ((int)score);
         bool done = false;
         string playerID = PlayerPrefs.GetString("PlayerID");
-        LootLockerSDKManager.SubmitScore(playerID, scoreToUpload, leaderboardID, (response) =>
+        LootLockerSDKManager.SubmitScore(playerID, scoreToUpload, key, (response) =>
         {
             if (response.success)
             {
@@ -48,5 +59,37 @@ public class LBManager : MonoBehaviour
         });
         yield return new WaitWhile(() => done == false);
     }
+    IEnumerator FetchTopHighscoresRoutine()
+    {
+        bool done = false;
 
+        LootLockerSDKManager.GetScoreList(key, 10, 0, (response) =>
+        {
+            if (response.success)
+            {
+                members = response.items;
+                done = true;
+
+                List<LBtemplate> plateInfos = new List<LBtemplate>();
+                foreach (GameObject plateInfo in gamemanager.userInterface.leaderboardPlates)
+                {
+                    plateInfos.Add(plateInfo.transform.GetChild(0).GetComponent<LBtemplate>());
+                }
+
+                for (int i = 0; i < members.Length; i++)
+                {
+                    LBtemplate plateInfo = gamemanager.userInterface.leaderboardPlates[i].transform.GetChild(0).GetComponent<LBtemplate>(); // voi säästää hiukan muistia jos tekee tän paremmin
+                    plateInfo.scoreText.text = members[i].score.ToString();
+                    plateInfo.nameText.text = members[i].player.name.ToString();
+                    plateInfo.hasInfo = true;
+                }
+                foreach (LBtemplate plateInfo in plateInfos)
+                {
+                    if (plateInfo.hasInfo == false) plateInfo.gameObject.SetActive(false);
+                }
+            }
+            else Debug.Log("Failed " + response.Error);
+        });
+        yield return new WaitWhile(() => done == false);
+    }
 }

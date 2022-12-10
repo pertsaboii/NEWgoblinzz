@@ -25,6 +25,7 @@ public class gamemanager : MonoBehaviour
     public static Animator dayCycleAnim;
     public static enemymanager enemyManager;
     public static MusicPlayer musicPlayer;
+    public static LBManager leaderboardManager;
     [SerializeField] private MusicPlayer musicplayer;
     [SerializeField] private Animator anim;
     [SerializeField] private uimanager UIScript;
@@ -49,6 +50,7 @@ public class gamemanager : MonoBehaviour
     private void Awake()
     {
         sceneManagement = GetComponent<SceneManagement>();
+        leaderboardManager = GetComponent<LBManager>();
 
         if (scene == Scene.PlayScene)
         {
@@ -115,6 +117,10 @@ public class gamemanager : MonoBehaviour
         state = State.GameOver;
         userInterface.DisableRunTimeUI();
         userInterface.GameOverMenu();
+        foreach (GameObject enemy in enemies)
+        {
+            enemy.SetActive(false);
+        }
 
         if (enemymanager.stage == 5) SoundManager.Instance.FadeMusic(1.5f, false, 1);
         else SoundManager.Instance.FadeMusic(2, false, 0);
