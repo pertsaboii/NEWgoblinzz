@@ -46,6 +46,8 @@ public class E_AIrigidram : MonoBehaviour
 
     private float randomX;
 
+    private float triggerColEmptyTimer;
+
     void Start()
     {
         speed = startSpeed;
@@ -78,7 +80,6 @@ public class E_AIrigidram : MonoBehaviour
                 Ray ray = new Ray(rayCastPoint.position, rayDir);
                 rayDir = new Vector3(target.transform.position.x - rayCastPoint.position.x, rayCastPoint.position.y, target.transform.position.z - rayCastPoint.position.z);
                 RaycastHit hitInfo;
-                //Debug.DrawRay(ray.origin, ray.direction * rayRange, Color.red, .1f);
                 if (Physics.BoxCast(rayCastPoint.position, new Vector3(3f, 0f, 0f), rayDir, out hitInfo, Quaternion.identity, rayRange, layerMask, QueryTriggerInteraction.Ignore))
                 {
                     if (hitInfo.transform.gameObject != gameObject && hitInfo.transform.gameObject != target)
@@ -89,6 +90,16 @@ public class E_AIrigidram : MonoBehaviour
                     else targetInSight = true;
                 }
                 else targetInSight = true;
+
+                if (triggerColEmpty == false)   // jos joku kusee behaviourissa niin liittynee tähän
+                {
+                    if (triggerColEmptyTimer >= 2)
+                    {
+                        triggerColEmpty = true;
+                        triggerColEmptyTimer = 0;
+                    }
+                    else triggerColEmptyTimer += Time.deltaTime;
+                }
                 break;
         }
         if (speed <= maxSpeed) speed += Time.deltaTime * accelerationPerS;

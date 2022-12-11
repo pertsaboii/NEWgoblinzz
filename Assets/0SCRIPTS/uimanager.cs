@@ -41,6 +41,7 @@ public class uimanager : MonoBehaviour
     [SerializeField] private Animator sceneFaderAnim;
     public GameObject[] deckTabCards;
     [SerializeField] private Button resetProgressButton;
+    [SerializeField] private RectTransform resetProgressPanel;
 
     [Header("Score")]
     public TMP_Text scoreText;
@@ -524,7 +525,6 @@ public class uimanager : MonoBehaviour
 
         foreach (GameObject plate in leaderboardPlates)
         {
-            SpawnCardAudio();
             plate.transform.DOScale(Vector3.one, .3f).SetEase(Ease.OutBounce);
             yield return new WaitForSeconds(.1f);
         }
@@ -580,5 +580,11 @@ public class uimanager : MonoBehaviour
         scoreSubmittedText.enabled = true;
         submitPanel.transform.rotation = Quaternion.Euler(-90, 0, 0);
         submitPanel.transform.DORotate(Vector3.zero, .2f).SetUpdate(true).SetEase(Ease.OutSine);
+    }
+    public void ResetProgressPanelOnOff()
+    {
+        ButtonClickAudio();
+        if (resetProgressPanel.localScale == Vector3.zero) resetProgressPanel.DOScale(Vector3.one, .3f).SetEase(Ease.OutSine);
+        else resetProgressPanel.DOScale(Vector3.zero, .3f).SetEase(Ease.OutSine);
     }
 }

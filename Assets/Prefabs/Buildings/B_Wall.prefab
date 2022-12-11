@@ -275,6 +275,7 @@ MonoBehaviour:
   hpBar: {fileID: 7558678079297843616}
   isDead: 0
   scalePopsWhenDamaged: 0
+  spawnDoScalePop: 0
 --- !u!114 &7558678079424835688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288,6 +289,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookAtMiddle: 0
+  spawnSound: {fileID: 0}
 --- !u!114 &4322588048052035860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -303,6 +305,7 @@ MonoBehaviour:
   hasDeathAnim: 0
   deathAnimDuration: 0
   deathFXType: 4
+  col: {fileID: 0}
   spawnsUnitOnDeath: 0
   spawningUnit: {fileID: 0}
   spawnPoint: {fileID: 0}

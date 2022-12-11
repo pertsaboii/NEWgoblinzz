@@ -266,11 +266,17 @@ public class U_AI : MonoBehaviour
             anim.SetInteger("State", 0);
 
             yield return new WaitForSeconds(idleTime);
-
-            anim.SetInteger("State", 1);
-
-            while (Vector3.Distance(randomPos, transform.position) < 4) CalculateRandomNavMeshPoint();
-            agent.SetDestination(randomPos);
+           
+            for (int i = 0; i < 7; i++)
+            {
+                CalculateRandomNavMeshPoint();
+                if (Vector3.Distance(randomPos, transform.position) < wanderingRange - 2)
+                {
+                    anim.SetInteger("State", 1);
+                    agent.SetDestination(randomPos);
+                    break;
+                }
+            }          
         }
         else StopCoroutine(RandomMovement());
     }

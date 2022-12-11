@@ -248,6 +248,12 @@
       },
       "url": "https://packages.unity.com"
     },
+    "io.backtrace.unity": {
+      "version": "file:C:/Users/Mee töihin/Desktop/gobbogame/crash log SDK",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {}
+    },
     "com.unity.modules.ai": {
       "version": "1.0.0",
       "depth": 0,

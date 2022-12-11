@@ -211,8 +211,8 @@ public class enemymanager : MonoBehaviour
             bossNameText.color = boss.textColor;
             bossTitleText.text = boss.title;
             bossTitleText.color = boss.textColor;
-            bossHealthScript.maxHealth *= resourcesPerSMult;
-            bossHealthScript.currentHealth *= resourcesPerSMult;
+            bossHealthScript.maxHealth *= resourcesPerSMult * (dayMult * day + 1);
+            bossHealthScript.currentHealth *= resourcesPerSMult * (dayMult * day + 1);
         }       
     }
     public void BossIntroText()
