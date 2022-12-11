@@ -36,8 +36,8 @@ public class ShopCard : MonoBehaviour
     [SerializeField] private TMP_Text notPurResCostText;
     [SerializeField] private TMP_Text purchaseCostText;
     [SerializeField] private Image notPurchasedImage;
-    [SerializeField] private Button purchaseButton;
-    [SerializeField] private float cardCost;
+    public Button purchaseButton;
+    public float cardCost;
     [SerializeField] private AudioClip buySound;
 
     [Header("Card Prefab")]

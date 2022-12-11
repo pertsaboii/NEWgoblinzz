@@ -987,6 +987,7 @@ MonoBehaviour:
   deathAnimDuration: 0
   deathFXType: 0
   col: {fileID: 0}
+  deathSound: {fileID: 8300000, guid: 8892612b72aab7f47bd2f17fcb17cd02, type: 3}
   spawnsUnitOnDeath: 0
   spawningUnit: {fileID: 0}
   spawnPoint: {fileID: 0}

@@ -33,7 +33,6 @@ public class ALL_Death : MonoBehaviour
 
     public IEnumerator Death()
     {
-        if (deathSound != null) SoundManager.Instance.PlaySFXSound(deathSound);
         col.enabled = false;       // jos jotain menee rikki nii tästä ehkä johtuu
 
         if (gameObject.CompareTag("Enemy"))
@@ -47,6 +46,7 @@ public class ALL_Death : MonoBehaviour
 
         if (hasDeathAnim == false)
         {
+            if (deathSound != null) SoundManager.Instance.PlaySFXSound(deathSound);
             gameObject.transform.DOPunchScale(transform.localScale * .3f, deathTweenTime, 5, 0.1f);
             yield return new WaitForSeconds(deathTweenTime / 2);
 
@@ -57,6 +57,7 @@ public class ALL_Death : MonoBehaviour
         else
         {
             yield return new WaitForSeconds(deathAnimDuration);
+            if (deathSound != null) SoundManager.Instance.PlaySFXSound(deathSound);
             InstantiateDeathFX();
         }
 

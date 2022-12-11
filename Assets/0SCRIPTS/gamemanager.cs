@@ -122,8 +122,8 @@ public class gamemanager : MonoBehaviour
             enemy.SetActive(false);
         }
 
-        if (enemymanager.stage == 5) SoundManager.Instance.FadeMusic(1.5f, false, 1);
-        else SoundManager.Instance.FadeMusic(2, false, 0);
+        if (enemymanager.stage == 5) SoundManager.Instance.FadeMusic(1.3f, false, 1);
+        else SoundManager.Instance.FadeMusic(1.3f, false, 0);
 
         // tänne myöhemmin void joka aktivoi cheering animaatiot vihollisilla
     }

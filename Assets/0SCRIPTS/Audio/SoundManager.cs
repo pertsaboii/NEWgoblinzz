@@ -44,9 +44,10 @@ public class SoundManager : MonoBehaviour
     {
         UISounds.PlayOneShot(clip);
     }
-    public void PlayMusicSound(AudioClip clip)
+    public void PlayMusicSound(AudioClip clip, int musicSoundSource)
     {
-        musicSounds.PlayOneShot(clip);
+        if (musicSoundSource == 0) musicSounds.PlayOneShot(clip);
+        else musicSounds2.PlayOneShot(clip);
     }
 
     // voluumien säätö

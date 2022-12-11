@@ -109,7 +109,6 @@ public class uimanager : MonoBehaviour
     private float scoreInterval = 2;
     private Vector3 originalScoreTextScale;
 
-    private bool newHighScoreAchieved;
     private void Start()
     {
         if (SceneManager.GetActiveScene().buildIndex == 1)
@@ -135,7 +134,7 @@ public class uimanager : MonoBehaviour
         moneyText.text = MultiScene.multiScene.money.ToString();
         originalMoneyTextScale = moneyText.rectTransform.localScale;
         originalScoreTextScale = scoreText.rectTransform.localScale;
-        SoundManager.Instance.PlayMusicSound(gamemanager.assetBank.FindSound(AssetBank.Sound.GameStartedJingle));
+        SoundManager.Instance.PlayMusicSound(gamemanager.assetBank.FindSound(AssetBank.Sound.GameStartedJingle), 0);
         runTimeUpPanel.anchoredPosition = new Vector3(0, 690, 0);
         runTimeDownPanel.anchoredPosition = new Vector3(0, -260, 0);
 
@@ -201,11 +200,6 @@ public class uimanager : MonoBehaviour
                     currentResources = Mathf.Floor(resourceSlider.value);
                     resourceNumber.text = currentResources.ToString("0");
                 }
-                if (timeBtwScoreIncrease > MultiScene.multiScene.highScore && newHighScoreAchieved == false)
-                {
-                    newHighScoreAchieved = true;
-                    NewHighScore();
-                } 
                 break;
             case State.MainMenu:
                 break;
@@ -263,10 +257,17 @@ public class uimanager : MonoBehaviour
     }
     public void GameOverMenu()
     {
+        AudioClip gameOverAudio = gamemanager.assetBank.FindSound(AssetBank.Sound.GameOverJingle);
         isTiming = false;
         currentRunScore.text = "Your score: " + score.ToString();
-        if (MultiScene.multiScene.highScore < score) MultiScene.multiScene.highScore = score;
-        if (score == MultiScene.multiScene.highScore) newHighScoreText.enabled = true;
+        if (MultiScene.multiScene.highScore < score)
+        {
+            MultiScene.multiScene.highScore = score;
+            newHighScoreText.enabled = true;
+            gameOverAudio = gamemanager.assetBank.FindSound(AssetBank.Sound.NewHighScoreJingle);
+        }
+        if (gamemanager.enemyManager.stage == 5) SoundManager.Instance.PlayMusicSound(gameOverAudio, 0);
+        else SoundManager.Instance.PlayMusicSound(gameOverAudio, 1);
         gameOverMenu.SetActive(true);
         gameOverMenu.transform.DOScale(Vector3.one, .15f).SetEase(Ease.OutSine).SetUpdate(true);
     }
@@ -565,11 +566,6 @@ public class uimanager : MonoBehaviour
     void StartGame()
     {
         gamemanager.sceneManagement.StartGame();
-    }
-    void NewHighScore()
-    {
-        SoundManager.Instance.PlayMusicSound(gamemanager.assetBank.FindSound(AssetBank.Sound.NewHighScoreJingle));
-        // tänne myöhemmin jotain juicea
     }
     public void BackToMainMenuFade()
     {

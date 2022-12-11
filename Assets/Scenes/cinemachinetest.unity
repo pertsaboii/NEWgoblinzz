@@ -3931,6 +3931,7 @@ MonoBehaviour:
   deathAnimDuration: 0
   deathFXType: 0
   col: {fileID: 0}
+  deathSound: {fileID: 0}
   spawnsUnitOnDeath: 0
   spawningUnit: {fileID: 0}
   spawnPoint: {fileID: 0}
@@ -7247,8 +7248,10 @@ MonoBehaviour:
     sound: 5
   - audioClip: {fileID: 8300000, guid: 42019c9997b375e47a9fb80db201b172, type: 3}
     sound: 6
-  - audioClip: {fileID: 8300000, guid: ed047b9003236974f94aec932f502b21, type: 3}
+  - audioClip: {fileID: 8300000, guid: 11e46c6d835698f4e9b51a0feef0e019, type: 3}
     sound: 7
+  - audioClip: {fileID: 8300000, guid: 360626fa1fbc8e6498a0a7edd79378e3, type: 3}
+    sound: 8
 --- !u!95 &1232587681
 Animator:
   serializedVersion: 4
@@ -11455,16 +11458,7 @@ MonoBehaviour:
   hardModeMoneyMult: 1.2
   moneyMult: 0
   purchasedCards: []
-  cardsOnDeck:
-  - {fileID: 5627627272792343555, guid: eee091b57fe08df4482acbfe7ca55362, type: 3}
-  - {fileID: 5627627272792343555, guid: 7c4b6922c1fda3b4ca8f6687a81a811b, type: 3}
-  - {fileID: 5627627272792343555, guid: fe355b85cbc4ba74ab747266314be8d7, type: 3}
-  - {fileID: 5627627272792343555, guid: e212a476e27813546bb18855299e030d, type: 3}
-  - {fileID: 5627627272792343555, guid: 8aa46fb0a0195004893bf90944e0370c, type: 3}
-  - {fileID: 5627627272792343555, guid: b06b3240619cda845a058653ac6c0c42, type: 3}
-  - {fileID: 5627627272792343555, guid: e3f25a6d0c1f3a74aba4051ede1abefa, type: 3}
-  - {fileID: 5627627272792343555, guid: 3463d7ebe0c102743874878342867b93, type: 3}
-  - {fileID: 5627627272792343555, guid: 0a4e5085270b69a4f8f2cc214f464eb4, type: 3}
+  cardsOnDeck: []
 --- !u!4 &2048307453
 Transform:
   m_ObjectHideFlags: 0

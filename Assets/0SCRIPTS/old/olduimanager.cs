@@ -109,7 +109,7 @@ public class olduimanager : MonoBehaviour
             resourceNumber.text = resourceSlider.value.ToString("0");
             moneyText.text = MultiScene.multiScene.money.ToString();
             originalMoneyTextScale = moneyText.rectTransform.localScale;
-            SoundManager.Instance.PlayMusicSound(gamemanager.assetBank.FindSound(AssetBank.Sound.GameStartedJingle));
+            //SoundManager.Instance.PlayMusicSound(gamemanager.assetBank.FindSound(AssetBank.Sound.GameStartedJingle));
 
             if (MultiScene.multiScene.difficulty == 0)
             {

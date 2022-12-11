@@ -123,6 +123,11 @@ public class MultiScene : MonoBehaviour
         {
             ShopCard shopCardScript = deckTabCard.transform.GetChild(0).GetComponent<ShopCard>();
             if (cardIDs.Contains(shopCardScript.cardID)) shopCardScript.NotPurchasedState();
+            if (shopCardScript.cardCost < money)
+            {
+                shopCardScript.purchaseButton.interactable = true;
+                shopCardScript.purchaseButton.image.color = new Color32(255, 210, 0, 255);
+            }
         }
         cardIDs = "";
         deckCards = "";
