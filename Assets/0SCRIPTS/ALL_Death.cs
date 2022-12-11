@@ -15,6 +15,7 @@ public class ALL_Death : MonoBehaviour
     [SerializeField] private float deathAnimDuration;
     [SerializeField] private DeathFXType deathFXType;
     [SerializeField] private Collider col;
+    [SerializeField] private AudioClip deathSound;
     [Header("Unit Spawn Upon Death")]
     [SerializeField] private bool spawnsUnitOnDeath;
     [SerializeField] private GameObject spawningUnit;
@@ -32,6 +33,7 @@ public class ALL_Death : MonoBehaviour
 
     public IEnumerator Death()
     {
+        if (deathSound != null) SoundManager.Instance.PlaySFXSound(deathSound);
         col.enabled = false;       // jos jotain menee rikki nii tästä ehkä johtuu
 
         if (gameObject.CompareTag("Enemy"))

@@ -512,7 +512,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2baea74291bd5004b8fd56d66d6a5f20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnSound: {fileID: 0}
+  spawnSound: {fileID: 8300000, guid: fde63f44559b3344c9b465e0be9ce8a8, type: 3}
   spawnDoScalePop: 0
 --- !u!114 &3850741198491778182
 MonoBehaviour:

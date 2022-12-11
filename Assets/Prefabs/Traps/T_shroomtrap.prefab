@@ -79,6 +79,8 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 64
+  spawnSound: {fileID: 8300000, guid: 184424c489ba0e64bb5162c161a0a6af, type: 3}
+  triggerSound: {fileID: 8300000, guid: b26de335d92766842b5427a790b48bdc, type: 3}
 --- !u!1 &6365579674731453736
 GameObject:
   m_ObjectHideFlags: 0

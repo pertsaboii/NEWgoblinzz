@@ -1085,7 +1085,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2baea74291bd5004b8fd56d66d6a5f20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnSound: {fileID: 0}
+  spawnSound: {fileID: 8300000, guid: 035671a54da83f0468bd6916e11379d5, type: 3}
+  spawnDoScalePop: 0
 --- !u!114 &8109951086228174996
 MonoBehaviour:
   m_ObjectHideFlags: 0

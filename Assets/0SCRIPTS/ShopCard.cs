@@ -38,7 +38,7 @@ public class ShopCard : MonoBehaviour
     [SerializeField] private Image notPurchasedImage;
     [SerializeField] private Button purchaseButton;
     [SerializeField] private float cardCost;
-    [SerializeField] private AudioClip unitSpawnSound;
+    [SerializeField] private AudioClip buySound;
 
     [Header("Card Prefab")]
     [SerializeField] private GameObject cardPrefab;
@@ -50,6 +50,11 @@ public class ShopCard : MonoBehaviour
         purchasedImage.sprite = card.mainImage.sprite;
         notPurchasedImage.sprite = card.insufFundsImage.sprite;
         infoPanelButton.onClick.AddListener(OpenInfoPanel);
+        if (cardCost > MultiScene.multiScene.money)
+        {
+            purchaseButton.interactable = false;
+            purchaseButton.image.color = new Color32(85, 85, 85, 255);
+        }
         if (MultiScene.multiScene.purchasedCards.Contains(cardPrefab) || MultiScene.multiScene.cardIDs.Contains(cardID)) PurchasedState();
         else NotPurchasedState();
     }
@@ -93,10 +98,10 @@ public class ShopCard : MonoBehaviour
         {
             CardPop();
             MultiScene.multiScene.money -= cardCost;
+            SoundManager.Instance.PlayUISound(buySound);
             SoundManager.Instance.PlayUISound(gamemanager.assetBank.FindSound(AssetBank.Sound.MoneyGained));
             gamemanager.userInterface.deckTabMoneyText.text = MultiScene.multiScene.money.ToString();
             gamemanager.userInterface.deckTabMoneyText.rectTransform.DOPunchScale(Vector3.one * -0.3f, 0.25f, 5, 1f);           
-            SoundManager.Instance.PlaySFXSound(unitSpawnSound);
             MultiScene.multiScene.cardIDs += cardID;
             PurchasedState();
         }

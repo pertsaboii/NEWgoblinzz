@@ -5015,7 +5015,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 384
   ps: {fileID: 6915311018597441341}
-  spawnSound: {fileID: 0}
+  spawnSound: {fileID: 8300000, guid: 96b455444ab3cbc46b0a33819c95a4ab, type: 3}
 --- !u!114 &8481251566081368039
 MonoBehaviour:
   m_ObjectHideFlags: 0

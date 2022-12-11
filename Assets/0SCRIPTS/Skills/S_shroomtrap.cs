@@ -16,6 +16,7 @@ public class S_shroomtrap : MonoBehaviour
     [SerializeField] MeshRenderer mesh;
     [SerializeField] private LayerMask layerMask;
     [SerializeField] private AudioClip spawnSound;
+    [SerializeField] private AudioClip triggerSound;
 
     private void Start()
     {
@@ -27,6 +28,7 @@ public class S_shroomtrap : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
+            SoundManager.Instance.PlaySFXSound(triggerSound);
             col.enabled = false;
             StartCoroutine("DamageCloud");
             other.gameObject.GetComponent<ALL_Health>().UpdateHealth(-initialDamage);

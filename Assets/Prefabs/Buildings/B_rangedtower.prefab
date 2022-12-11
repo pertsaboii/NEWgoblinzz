@@ -271,7 +271,7 @@ MonoBehaviour:
   - {fileID: 1185957136444524716}
   attackSpeed: 0.7
   attackRange: 14
-  spawnSound: {fileID: 0}
+  spawnSound: {fileID: 8300000, guid: 96b455444ab3cbc46b0a33819c95a4ab, type: 3}
   target: {fileID: 0}
   targets: []
 --- !u!208 &1185957136749486219
