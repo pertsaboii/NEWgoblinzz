@@ -137,7 +137,7 @@ public class uimanager : MonoBehaviour
         originalScoreTextScale = scoreText.rectTransform.localScale;
         SoundManager.Instance.PlayMusicSound(gamemanager.assetBank.FindSound(AssetBank.Sound.GameStartedJingle));
         runTimeUpPanel.anchoredPosition = new Vector3(0, 690, 0);
-        runTimeDownPanel.anchoredPosition = new Vector3(0, -240, 0);
+        runTimeDownPanel.anchoredPosition = new Vector3(0, -260, 0);
 
         if (MultiScene.multiScene.difficulty == 0)
         {
