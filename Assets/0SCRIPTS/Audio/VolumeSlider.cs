@@ -36,25 +36,4 @@ public class VolumeSlider : MonoBehaviour
             //SoundManager.Instance.ChangeMusicVolume(slider.value);
         }
     }
-    /*private void OnEnable()
-    {
-        if (slider == null) slider = GetComponent<Slider>();
-
-        if (masterVolumeSlider)
-        {
-            if (slider.value != SoundManager.Instance.MasterVol) slider.value = SoundManager.Instance.MasterVol;
-        }
-        else if (UIVolumeSlider)
-        {
-            if (slider.value != SoundManager.Instance.UIVol) slider.value = SoundManager.Instance.UIVol;
-        }
-        else if (SFXVolumeSlider)
-        {
-            if (slider.value != SoundManager.Instance.SFXVol) slider.value = SoundManager.Instance.SFXVol;
-        }
-        else if (musicVolumeSlider)
-        {
-            if (slider.value != SoundManager.Instance.MusicVol) slider.value = SoundManager.Instance.MusicVol;
-        }
-    }*/
 }

@@ -23,7 +23,6 @@ public class ShopCard : MonoBehaviour
     [SerializeField] private VideoClip infoPanelVideo;
 
     [Header("Purchased")]
-    [SerializeField] private Image selectedPanel;
     [SerializeField] private TMP_Text purResCostText;
     [SerializeField] private Image purchasedImage;
     [SerializeField] private Button toDeckButton;
@@ -57,7 +56,7 @@ public class ShopCard : MonoBehaviour
     public void NotPurchasedState()
     {
         state = State.NotPurchased;
-        selectedPanel.transform.localScale = Vector3.zero;
+        transform.localScale = Vector3.one;
         purResCostText.text = card.cost.ToString();
         notPurResCostText.text = card.cost.ToString();
         purchaseCostText.text = cardCost.ToString();
@@ -85,8 +84,8 @@ public class ShopCard : MonoBehaviour
         toDeckButton.onClick.AddListener(CardOnOffDeck);
         notPurchasedCard.SetActive(false);
         state = State.Purchased;
-        if (MultiScene.multiScene.cardsOnDeck.Contains(cardPrefab)) selectedPanel.transform.localScale = Vector3.one;
-        else selectedPanel.transform.localScale = Vector3.zero;
+        if (MultiScene.multiScene.cardsOnDeck.Contains(cardPrefab) && transform.localScale == Vector3.one) transform.DOScale(Vector3.one * 1.05f, .25f);
+        else transform.localScale = Vector3.one;
     }
     public void PurchaseCard()
     {
@@ -110,7 +109,7 @@ public class ShopCard : MonoBehaviour
 
         if (MultiScene.multiScene.cardsOnDeck.Contains(cardPrefab))
         {
-            selectedPanel.transform.DOScale(Vector3.zero, .1f).SetEase(Ease.InSine);
+            transform.DOScale(Vector3.one, .25f).SetEase(Ease.InSine);
             MultiScene.multiScene.cardsOnDeck.Remove(cardPrefab);
             MultiScene.multiScene.deckCards = MultiScene.multiScene.deckCards.Replace(cardID, "");
             toDeckButton.image.color = notInDeckColor;
@@ -119,7 +118,7 @@ public class ShopCard : MonoBehaviour
         else
         {
             SoundManager.Instance.PlayUISound(gamemanager.assetBank.FindSound(AssetBank.Sound.CardSelected));
-            selectedPanel.transform.DOScale(Vector3.one, .1f);
+            transform.DOScale(Vector3.one * 1.05f, .25f);
             MultiScene.multiScene.cardsOnDeck.Add(cardPrefab);
             MultiScene.multiScene.deckCards += cardID;
             toDeckButton.image.color = inDeckColor;

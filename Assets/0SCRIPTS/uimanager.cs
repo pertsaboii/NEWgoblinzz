@@ -23,6 +23,7 @@ public class uimanager : MonoBehaviour
     [Header("Menus")]
     [SerializeField] private GameObject gameOverMenu;
     [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private Image pauseMenuBg;
     [SerializeField] private GameObject runTimeUi;
     [SerializeField] private GameObject audioMenu;
     [SerializeField] private RectTransform runTimeDownPanel;
@@ -42,6 +43,7 @@ public class uimanager : MonoBehaviour
     public GameObject[] deckTabCards;
     [SerializeField] private Button resetProgressButton;
     [SerializeField] private RectTransform resetProgressPanel;
+    [SerializeField] private RectTransform creditsPanel;
 
     [Header("Score")]
     public TMP_Text scoreText;
@@ -231,14 +233,32 @@ public class uimanager : MonoBehaviour
 
     public void AudioMenuOnOff()
     {
-        if (audioMenu.activeSelf == false) audioMenu.SetActive(true);
-        else audioMenu.SetActive(false);
+        if (audioMenu.transform.localScale == Vector3.zero)
+        {
+            audioMenu.SetActive(false);
+            audioMenu.SetActive(true);
+            audioMenu.transform.DOScale(Vector3.one, .3f).SetEase(Ease.OutSine).SetUpdate(true);
+        }
+        else
+        {
+            audioMenu.transform.DOScale(Vector3.zero, .3f).SetEase(Ease.OutSine).SetUpdate(true);
+        }
         ButtonClickAudio();
     }
     public void PauseMenuOnOff()
     {
-        if (pauseMenu.activeSelf == false) pauseMenu.SetActive(true);
-        else pauseMenu.SetActive(false);
+        if (pauseMenu.activeSelf == false)
+        {
+            pauseMenu.SetActive(true);
+            pauseMenuBg.color = new Color32(0, 0, 0, 0);
+            pauseMenu.transform.DOScale(Vector3.one, .15f).SetEase(Ease.OutSine).SetUpdate(true);
+            pauseMenuBg.DOColor(new Color32(255, 255, 255, 36), .5f).SetUpdate(true);
+        }
+        else
+        {
+            pauseMenu.transform.localScale = Vector3.zero;
+            pauseMenu.SetActive(false);           
+        }
         ButtonClickAudio();
     }
     public void GameOverMenu()
@@ -248,6 +268,7 @@ public class uimanager : MonoBehaviour
         if (MultiScene.multiScene.highScore < score) MultiScene.multiScene.highScore = score;
         if (score == MultiScene.multiScene.highScore) newHighScoreText.enabled = true;
         gameOverMenu.SetActive(true);
+        gameOverMenu.transform.DOScale(Vector3.one, .15f).SetEase(Ease.OutSine).SetUpdate(true);
     }
     public void DisableRunTimeUI()
     {
@@ -586,5 +607,14 @@ public class uimanager : MonoBehaviour
         ButtonClickAudio();
         if (resetProgressPanel.localScale == Vector3.zero) resetProgressPanel.DOScale(Vector3.one, .3f).SetEase(Ease.OutSine);
         else resetProgressPanel.DOScale(Vector3.zero, .3f).SetEase(Ease.OutSine);
+    }
+    public void CreditsPanelOnOff()
+    {        
+        if (creditsPanel.localScale == Vector3.zero)
+        {
+            ButtonClickAudio();
+            creditsPanel.DOScale(Vector3.one, .3f).SetEase(Ease.OutSine);
+        }
+        else creditsPanel.DOScale(Vector3.zero, .3f).SetEase(Ease.OutSine);
     }
 }
