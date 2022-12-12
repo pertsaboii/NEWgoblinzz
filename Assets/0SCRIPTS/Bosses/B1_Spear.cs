@@ -21,6 +21,7 @@ public class B1_Spear : MonoBehaviour
     private Transform localTransform;
     [HideInInspector] public GameObject target;
     [HideInInspector] public ALL_Health targetHealth;
+    [SerializeField] private AudioClip throwHitSound;
 
     //debug
     [SerializeField] private bool debugMode;
@@ -55,6 +56,7 @@ public class B1_Spear : MonoBehaviour
             other.gameObject.GetComponent<ALL_Health>().UpdateHealth(-throwDamage);
             onGroundCol.enabled = true;
             spearObstacle.enabled = true;
+            SoundManager.Instance.PlaySFXSound(throwHitSound);
         }
     }
     void SpearLookAtTarget()

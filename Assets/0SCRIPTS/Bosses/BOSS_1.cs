@@ -55,6 +55,12 @@ public class BOSS_1 : MonoBehaviour
     // spear timed returnal
     private float timeWithoutSpear;
 
+    [Header("SFX")]
+    [SerializeField] private AudioClip groundHitSound;
+    [SerializeField] private AudioClip startSwingSound;
+    [SerializeField] private AudioClip sweepSound;
+    [SerializeField] private AudioClip stabSound;
+
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
@@ -135,6 +141,7 @@ public class BOSS_1 : MonoBehaviour
                     }
             }
             anim.SetTrigger("Land");
+            SoundManager.Instance.PlaySFXSound(groundHitSound);
             rb.useGravity = false;
             rb.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionY;
             gameObject.layer = 6;
@@ -142,6 +149,18 @@ public class BOSS_1 : MonoBehaviour
             cameraShake.StartShakeCamera();
             gamemanager.enemyManager.BossIntroText();
         }
+    }
+    void StartSwingSound()
+    {
+        SoundManager.Instance.PlaySFXSound(startSwingSound);
+    }
+    void SweepSound()
+    {
+        SoundManager.Instance.PlaySFXSound(sweepSound);
+    }
+    void StabSound()
+    {
+        SoundManager.Instance.PlaySFXSound(stabSound);
     }
     void SpawnDone()    // callataan land-animaation lopussa
     {
