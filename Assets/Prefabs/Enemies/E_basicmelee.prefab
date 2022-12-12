@@ -837,6 +837,7 @@ MonoBehaviour:
     m_Bits: 0
   aoeFX: {fileID: 0}
   currentState: 
+  aoeAttackSound: {fileID: 0}
 --- !u!114 &4235148133687976176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -948,7 +949,7 @@ MonoBehaviour:
   deathAnimDuration: 0
   deathFXType: 1
   col: {fileID: 0}
-  deathSound: {fileID: 0}
+  deathSound: {fileID: 8300000, guid: a3455c72c3116b74c963849a38a550d4, type: 3}
   spawnsUnitOnDeath: 0
   spawningUnit: {fileID: 0}
   spawnPoint: {fileID: 0}

@@ -1336,6 +1336,7 @@ MonoBehaviour:
     m_Bits: 192
   rayCastPoint: {fileID: 7055004965505307109}
   rayRange: 2.3
+  hitSound: {fileID: 8300000, guid: c7b990769160c9645a2f3b6bb5e869d1, type: 3}
 --- !u!114 &7055004966913796213
 MonoBehaviour:
   m_ObjectHideFlags: 0

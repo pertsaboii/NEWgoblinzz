@@ -878,6 +878,7 @@ MonoBehaviour:
   targetPos: {x: 0, y: 0, z: 0}
   target: {fileID: 0}
   targetHealth: {fileID: 0}
+  throwHitSound: {fileID: 8300000, guid: af17cb5e1d0f1e34cb11c7832cddf0c0, type: 3}
   debugMode: 0
   debugTarget: {fileID: 0}
 --- !u!65 &4650803612478551398
@@ -1208,6 +1209,7 @@ MonoBehaviour:
   deathAnimDuration: 0
   deathFXType: 1
   col: {fileID: 0}
+  deathSound: {fileID: 8300000, guid: e8bc92bc155d3bd4294c76ec78656d55, type: 3}
   spawnsUnitOnDeath: 0
   spawningUnit: {fileID: 0}
   spawnPoint: {fileID: 0}
@@ -1249,6 +1251,10 @@ MonoBehaviour:
   target: {fileID: 0}
   currentState: 
   turnSpeed: 15
+  groundHitSound: {fileID: 8300000, guid: 05ef3c7eecb7f374c9ffe9bb883199e8, type: 3}
+  startSwingSound: {fileID: 8300000, guid: 284bec189c7addb4b9948c25b3b5c23a, type: 3}
+  sweepSound: {fileID: 8300000, guid: f72796f56585a6c46a9087605ae516a1, type: 3}
+  stabSound: {fileID: 8300000, guid: 2c25a81e99c674448bc9ebfb1665cec1, type: 3}
 --- !u!54 &4650803612942836843
 Rigidbody:
   m_ObjectHideFlags: 0

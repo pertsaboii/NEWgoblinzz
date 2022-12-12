@@ -7324,8 +7324,8 @@ MonoBehaviour:
     sound: 7
   - audioClip: {fileID: 8300000, guid: 745ee3af6ea198f4da215c3a22dfc84b, type: 3}
     sound: 8
-  - audioClip: {fileID: 8300000, guid: dfb87e6ec05f400448104c6b18d93071, type: 3}
-    sound: 10
+  - audioClip: {fileID: 8300000, guid: 15bd0d549f842fd479ba1ab50a204f1e, type: 3}
+    sound: 9
 --- !u!95 &1232587681
 Animator:
   serializedVersion: 4
@@ -10232,7 +10232,7 @@ MonoBehaviour:
   enemySpawnPool: []
   stage: 1
   day: 0
-  EnemyStartResources: 1
+  EnemyStartResources: 2
   easyResPerSMult: 0.7
   easySpawnIntMult: 0.7
   hardResPerSMult: 1.3
