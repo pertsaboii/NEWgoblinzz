@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b17f851046424954e889b70cfd9c8786, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 2
   speed: 15
   turnSpeed: 50
   targetHealth: {fileID: 0}

@@ -58,6 +58,7 @@ public class LBManager : MonoBehaviour
             }
         });
         yield return new WaitWhile(() => done == false);
+        PlayerPrefs.DeleteAll();
     }
     IEnumerator FetchTopHighscoresRoutine()
     {

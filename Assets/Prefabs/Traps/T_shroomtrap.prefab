@@ -71,8 +71,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ps: {fileID: 5496003398296362751, guid: 537ac4955b1c1ed4996dee5a46fb26ea, type: 3}
-  damage: 1
-  initialDamage: 2
+  damage: 2
+  initialDamage: 4
   damageInterval: 0.5
   damageCycles: 6
   cloudRadius: 4

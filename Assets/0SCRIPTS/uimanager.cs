@@ -48,7 +48,7 @@ public class uimanager : MonoBehaviour
     [Header("Score")]
     public TMP_Text scoreText;
     [SerializeField] private TMP_Text currentRunScore;
-    [SerializeField] private TMP_Text newHighScoreText;
+    [SerializeField] private GameObject newHighScoreText;
     public TMP_InputField submitScoreName;
     [SerializeField] private Button submitScoreButton;
     [SerializeField] private GameObject submitPanel;
@@ -263,7 +263,7 @@ public class uimanager : MonoBehaviour
         if (MultiScene.multiScene.highScore < score)
         {
             MultiScene.multiScene.highScore = score;
-            newHighScoreText.enabled = true;
+            newHighScoreText.SetActive(true);
             gameOverAudio = gamemanager.assetBank.FindSound(AssetBank.Sound.NewHighScoreJingle);
         }
         if (gamemanager.enemyManager.stage == 5) SoundManager.Instance.PlayMusicSound(gameOverAudio, 0);

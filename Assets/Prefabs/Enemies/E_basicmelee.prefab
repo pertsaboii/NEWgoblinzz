@@ -805,7 +805,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62daf9a693e29b745ad723a2ad23f146, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 20
   currentHealth: 0
   hpSprite: {fileID: 1424213569131766137}
   hpBar: {fileID: 1424213569891032975}
@@ -947,6 +947,8 @@ MonoBehaviour:
   hasDeathAnim: 0
   deathAnimDuration: 0
   deathFXType: 1
+  col: {fileID: 0}
+  deathSound: {fileID: 0}
   spawnsUnitOnDeath: 0
   spawningUnit: {fileID: 0}
   spawnPoint: {fileID: 0}

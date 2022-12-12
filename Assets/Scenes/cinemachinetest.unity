@@ -1265,8 +1265,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e6646776bb48f9a46b3a34863e311150, type: 2}
-  m_sharedMaterial: {fileID: -1733793114054490980, guid: e6646776bb48f9a46b3a34863e311150,
+  m_fontAsset: {fileID: 11400000, guid: 44f914c3dcf55814c8fb6feda3f892ba, type: 2}
+  m_sharedMaterial: {fileID: -1733793114054490980, guid: 44f914c3dcf55814c8fb6feda3f892ba,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -2969,7 +2969,7 @@ MonoBehaviour:
   creditsPanel: {fileID: 0}
   scoreText: {fileID: 580445259}
   currentRunScore: {fileID: 1915346130}
-  newHighScoreText: {fileID: 1089142411}
+  newHighScoreText: {fileID: 1089142410}
   submitScoreName: {fileID: 587070719}
   submitScoreButton: {fileID: 1498998263}
   submitPanel: {fileID: 802885243}
@@ -2978,7 +2978,7 @@ MonoBehaviour:
   moneyText: {fileID: 876021854}
   resourceSlider: {fileID: 66242304}
   refreshCooldown: 4
-  resourcesPerS: 0.43
+  resourcesPerS: 0.258
   startResources: 3
   resourceNumber: {fileID: 257962729}
   resourceCircle: {fileID: 134745958}
@@ -3244,6 +3244,7 @@ GameObject:
   - component: {fileID: 573938283}
   - component: {fileID: 573938282}
   - component: {fileID: 573938281}
+  - component: {fileID: 573938284}
   m_Layer: 5
   m_Name: mainmenubutton
   m_TagString: Untagged
@@ -3366,6 +3367,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 573938279}
   m_CullTransparentMesh: 1
+--- !u!114 &573938284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573938279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06b5eeb4e9f8c30478daee95273da886, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popScale: 0.35
+  popTime: 0.3
+  popVibrato: 8
+  popElasticity: 1
 --- !u!1 &580445257
 GameObject:
   m_ObjectHideFlags: 0
@@ -4602,6 +4619,7 @@ GameObject:
   - component: {fileID: 763492772}
   - component: {fileID: 763492771}
   - component: {fileID: 763492770}
+  - component: {fileID: 763492773}
   m_Layer: 5
   m_Name: mainmenubutton
   m_TagString: Untagged
@@ -4724,6 +4742,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 763492768}
   m_CullTransparentMesh: 1
+--- !u!114 &763492773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763492768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06b5eeb4e9f8c30478daee95273da886, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popScale: 0.35
+  popTime: 0.3
+  popVibrato: 8
+  popElasticity: 1
 --- !u!1 &764559707
 GameObject:
   m_ObjectHideFlags: 0
@@ -6205,6 +6239,7 @@ GameObject:
   - component: {fileID: 1089142413}
   - component: {fileID: 1089142412}
   - component: {fileID: 1089142411}
+  - component: {fileID: 1089142414}
   m_Layer: 5
   m_Name: NEWHIGHSCORE
   m_TagString: Untagged
@@ -6260,8 +6295,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 49.74
-  m_fontSizeBase: 49.74
+  m_fontSize: 80
+  m_fontSizeBase: 80
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6320,7 +6355,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1915346128}
   m_RootOrder: 0
@@ -6330,6 +6365,26 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -85}
   m_SizeDelta: {x: 500, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &1089142414
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089142410}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 771b66e3d2740084ba14d4c556a67691, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1091278614
 GameObject:
   m_ObjectHideFlags: 0
@@ -8556,6 +8611,7 @@ GameObject:
   - component: {fileID: 1496582682}
   - component: {fileID: 1496582681}
   - component: {fileID: 1496582680}
+  - component: {fileID: 1496582683}
   m_Layer: 5
   m_Name: audiosettingsbutton
   m_TagString: Untagged
@@ -8678,6 +8734,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1496582678}
   m_CullTransparentMesh: 1
+--- !u!114 &1496582683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1496582678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06b5eeb4e9f8c30478daee95273da886, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popScale: 0.35
+  popTime: 0.3
+  popVibrato: 8
+  popElasticity: 1
 --- !u!1 &1498998261
 GameObject:
   m_ObjectHideFlags: 0
@@ -8690,6 +8762,7 @@ GameObject:
   - component: {fileID: 1498998265}
   - component: {fileID: 1498998264}
   - component: {fileID: 1498998263}
+  - component: {fileID: 1498998266}
   m_Layer: 5
   m_Name: SubmitButton
   m_TagString: Untagged
@@ -8812,6 +8885,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1498998261}
   m_CullTransparentMesh: 1
+--- !u!114 &1498998266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498998261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06b5eeb4e9f8c30478daee95273da886, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popScale: 0.35
+  popTime: 0.3
+  popVibrato: 8
+  popElasticity: 1
 --- !u!1 &1522746197
 GameObject:
   m_ObjectHideFlags: 0
@@ -10108,22 +10197,22 @@ MonoBehaviour:
   stage: 1
   day: 0
   EnemyStartResources: 1
-  easyResPerSMult: 0.8
-  easySpawnIntMult: 0.8
-  hardResPerSMult: 1.2
-  hardSpawnIntMult: 1.2
+  easyResPerSMult: 0.7
+  easySpawnIntMult: 0.7
+  hardResPerSMult: 1.3
+  hardSpawnIntMult: 1.3
   dayMult: 0.6
   stagesInDay: 5
   stageChangeInterval: 30
-  s1ResourcesPerS: 0.3
+  s1ResourcesPerS: 0.18
   s1SpawnInterval: 1.4
-  s2ResourcesPerS: 0.45
+  s2ResourcesPerS: 0.27
   s2SpawnInterval: 1.2
-  s3ResourcesPerS: 0.6
+  s3ResourcesPerS: 0.36
   s3SpawnInterval: 1
-  s4ResourcesPerS: 0.2
+  s4ResourcesPerS: 0.12
   s4SpawnInterval: 1.6
-  s5ResourcesPerS: 0.1
+  s5ResourcesPerS: 0.06
   s5SpawnInterval: 1.8
   bossNameText: {fileID: 1830427957}
   bossTitleText: {fileID: 1254630579}
@@ -11471,11 +11560,20 @@ MonoBehaviour:
   deckCards: 
   gameStartedFirstTime: 0
   difficulty: 1
-  easyModeMoneyMult: 0.8
-  hardModeMoneyMult: 1.2
+  easyModeMoneyMult: 0.7
+  hardModeMoneyMult: 1.3
   moneyMult: 0
   purchasedCards: []
-  cardsOnDeck: []
+  cardsOnDeck:
+  - {fileID: 5627627272792343555, guid: eee091b57fe08df4482acbfe7ca55362, type: 3}
+  - {fileID: 5627627272792343555, guid: 7c4b6922c1fda3b4ca8f6687a81a811b, type: 3}
+  - {fileID: 5627627272792343555, guid: fe355b85cbc4ba74ab747266314be8d7, type: 3}
+  - {fileID: 5627627272792343555, guid: e212a476e27813546bb18855299e030d, type: 3}
+  - {fileID: 5627627272792343555, guid: 8aa46fb0a0195004893bf90944e0370c, type: 3}
+  - {fileID: 5627627272792343555, guid: b06b3240619cda845a058653ac6c0c42, type: 3}
+  - {fileID: 5627627272792343555, guid: e3f25a6d0c1f3a74aba4051ede1abefa, type: 3}
+  - {fileID: 5627627272792343555, guid: 3463d7ebe0c102743874878342867b93, type: 3}
+  - {fileID: 5627627272792343555, guid: 0a4e5085270b69a4f8f2cc214f464eb4, type: 3}
 --- !u!4 &2048307453
 Transform:
   m_ObjectHideFlags: 0
@@ -15514,7 +15612,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.81, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -15543,7 +15641,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 1
+  m_FillAmount: 0.81
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -15609,7 +15707,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.81, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -15638,7 +15736,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 1
+  m_FillAmount: 0.81
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -15695,7 +15793,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.81, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -15724,7 +15822,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 1
+  m_FillAmount: 0.81
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
