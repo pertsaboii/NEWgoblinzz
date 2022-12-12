@@ -238,11 +238,13 @@ public class uimanager : MonoBehaviour
             audioMenu.transform.DOScale(Vector3.zero, .3f).SetEase(Ease.OutSine).SetUpdate(true);
         }
         ButtonClickAudio();
+        UISwoosh(1);
     }
     public void PauseMenuOnOff()
     {
         if (pauseMenu.activeSelf == false)
         {
+            UISwoosh(1);
             pauseMenu.SetActive(true);
             pauseMenuBg.color = new Color32(0, 0, 0, 0);
             pauseMenu.transform.DOScale(Vector3.one, .15f).SetEase(Ease.OutSine).SetUpdate(true);
@@ -351,6 +353,7 @@ public class uimanager : MonoBehaviour
     {
         runTimeUpPanel.DOAnchorPosY(-910, .5f).SetEase(Ease.OutSine);
         runTimeDownPanel.DOAnchorPosY(0, .5f).SetEase(Ease.OutSine);
+        UISwoosh(1);
         yield return new WaitForSeconds(.3f);
         SpawnCardOne();
         yield return new WaitForSeconds(.2f);
@@ -481,6 +484,7 @@ public class uimanager : MonoBehaviour
     public void DeckTabOnOff()
     {
         ButtonClickAudio();
+        UISwoosh(0);
         if (mainMenuTabs == MainMenuTabs.MainTab)
         {
             mainTab.DOLocalMoveX(-1080, .5f, true);
@@ -498,6 +502,7 @@ public class uimanager : MonoBehaviour
     public void LeaderboardTabOnOff()
     {
         ButtonClickAudio();
+        UISwoosh(0);
         if (mainMenuTabs == MainMenuTabs.MainTab)
         {
             mainTab.DOLocalMoveX(1080, .5f, true);
@@ -601,16 +606,23 @@ public class uimanager : MonoBehaviour
     public void ResetProgressPanelOnOff()
     {
         ButtonClickAudio();
+        UISwoosh(1);
         if (resetProgressPanel.localScale == Vector3.zero) resetProgressPanel.DOScale(Vector3.one, .3f).SetEase(Ease.OutSine);
         else resetProgressPanel.DOScale(Vector3.zero, .3f).SetEase(Ease.OutSine);
     }
     public void CreditsPanelOnOff()
-    {        
+    {
+        UISwoosh(1);
         if (creditsPanel.localScale == Vector3.zero)
         {
             ButtonClickAudio();
             creditsPanel.DOScale(Vector3.one, .3f).SetEase(Ease.OutSine);
         }
         else creditsPanel.DOScale(Vector3.zero, .3f).SetEase(Ease.OutSine);
+    }
+    void UISwoosh(int swooshType)
+    {
+        if (swooshType == 0) SoundManager.Instance.PlayUISound(gamemanager.assetBank.FindSound(AssetBank.Sound.UISwoosh0));
+        else SoundManager.Instance.PlayUISound(gamemanager.assetBank.FindSound(AssetBank.Sound.UISwoosh1));
     }
 }

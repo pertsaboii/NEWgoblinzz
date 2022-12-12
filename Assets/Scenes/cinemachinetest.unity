@@ -643,6 +643,7 @@ GameObject:
   - component: {fileID: 142995790}
   - component: {fileID: 142995789}
   - component: {fileID: 142995788}
+  - component: {fileID: 142995791}
   m_Layer: 5
   m_Name: restartbutton
   m_TagString: Untagged
@@ -765,6 +766,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 142995786}
   m_CullTransparentMesh: 1
+--- !u!114 &142995791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142995786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06b5eeb4e9f8c30478daee95273da886, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popScale: 0.35
+  popTime: 0.3
+  popVibrato: 8
+  popElasticity: 1
 --- !u!1 &150594491
 GameObject:
   m_ObjectHideFlags: 0
@@ -7305,8 +7322,10 @@ MonoBehaviour:
     sound: 6
   - audioClip: {fileID: 8300000, guid: 11e46c6d835698f4e9b51a0feef0e019, type: 3}
     sound: 7
-  - audioClip: {fileID: 8300000, guid: 360626fa1fbc8e6498a0a7edd79378e3, type: 3}
+  - audioClip: {fileID: 8300000, guid: 745ee3af6ea198f4da215c3a22dfc84b, type: 3}
     sound: 8
+  - audioClip: {fileID: 8300000, guid: dfb87e6ec05f400448104c6b18d93071, type: 3}
+    sound: 10
 --- !u!95 &1232587681
 Animator:
   serializedVersion: 4
@@ -8950,6 +8969,7 @@ GameObject:
   - component: {fileID: 1531128594}
   - component: {fileID: 1531128593}
   - component: {fileID: 1531128592}
+  - component: {fileID: 1531128595}
   m_Layer: 5
   m_Name: resumebutton
   m_TagString: Untagged
@@ -9072,6 +9092,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1531128590}
   m_CullTransparentMesh: 1
+--- !u!114 &1531128595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1531128590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06b5eeb4e9f8c30478daee95273da886, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popScale: 0.35
+  popTime: 0.3
+  popVibrato: 8
+  popElasticity: 1
 --- !u!1 &1537400653
 GameObject:
   m_ObjectHideFlags: 0
@@ -10074,7 +10110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06b5eeb4e9f8c30478daee95273da886, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popScale: 0.35
+  popScale: 1
   popTime: 0.3
   popVibrato: 8
   popElasticity: 1
@@ -11614,6 +11650,7 @@ GameObject:
   - component: {fileID: 2048821542}
   - component: {fileID: 2048821541}
   - component: {fileID: 2048821540}
+  - component: {fileID: 2048821543}
   m_Layer: 5
   m_Name: restartbutton
   m_TagString: Untagged
@@ -11736,6 +11773,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2048821538}
   m_CullTransparentMesh: 1
+--- !u!114 &2048821543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2048821538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06b5eeb4e9f8c30478daee95273da886, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popScale: 0.35
+  popTime: 0.3
+  popVibrato: 8
+  popElasticity: 1
 --- !u!1 &2057572092
 GameObject:
   m_ObjectHideFlags: 0

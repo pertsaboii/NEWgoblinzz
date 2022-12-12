@@ -25,7 +25,9 @@ public class AssetBank : MonoBehaviour
         MoneyGained,
         GameStartedJingle,
         NewHighScoreJingle,
-        GameOverJingle
+        GameOverJingle,
+        UISwoosh0,
+        UISwoosh1
     }
 
     public FX[] FXArray;
