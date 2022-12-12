@@ -353,7 +353,7 @@ public class uimanager : MonoBehaviour
     {
         runTimeUpPanel.DOAnchorPosY(-910, .5f).SetEase(Ease.OutSine);
         runTimeDownPanel.DOAnchorPosY(0, .5f).SetEase(Ease.OutSine);
-        UISwoosh(1);
+        UISwoosh(0);
         yield return new WaitForSeconds(.3f);
         SpawnCardOne();
         yield return new WaitForSeconds(.2f);

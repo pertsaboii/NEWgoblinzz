@@ -48,6 +48,8 @@ public class E_AIrigidram : MonoBehaviour
 
     private float triggerColEmptyTimer;
 
+    [SerializeField] private AudioClip hitSound;
+
     void Start()
     {
         speed = startSpeed;
@@ -166,6 +168,7 @@ public class E_AIrigidram : MonoBehaviour
     void ImpactToTarget()
     {
         Instantiate(gamemanager.assetBank.FindFX(AssetBank.FXType.BatteringRamHit), hitFXSpawnPoint.position, Quaternion.identity);
+        SoundManager.Instance.PlaySFXSound(hitSound);
         cameraShake.StartShakeCamera();
         impactDone = true;
         target.GetComponent<ALL_Health>().UpdateHealth(-buildingDamage);

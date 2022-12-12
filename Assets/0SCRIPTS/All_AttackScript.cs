@@ -29,6 +29,8 @@ public class All_AttackScript : MonoBehaviour
 
     [SerializeField] private string currentState;
 
+    [SerializeField] private AudioClip aoeAttackSound;
+
     private CameraShake cameraShake;
     void Start()
     {
@@ -74,6 +76,7 @@ public class All_AttackScript : MonoBehaviour
     void AoeMeleeDmg()
     {
         Instantiate(aoeFX, aoeDmgOrigin.transform.position, Quaternion.identity);
+        if (aoeAttackSound != null) SoundManager.Instance.PlaySFXSound(aoeAttackSound);
         cameraShake.StartShakeCamera();
         Collider[] colliders = Physics.OverlapSphere(aoeDmgOrigin.position, aoeRadius, aoeDmgTargets);
         {
