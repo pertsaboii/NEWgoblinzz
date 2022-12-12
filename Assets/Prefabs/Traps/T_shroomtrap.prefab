@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5277733942898682462}
   - component: {fileID: 5277733942898682434}
   - component: {fileID: 5277733942898682433}
+  - component: {fileID: 2618543710704616699}
   m_Layer: 12
   m_Name: T_shroomtrap
   m_TagString: Trap
@@ -81,6 +82,19 @@ MonoBehaviour:
     m_Bits: 64
   spawnSound: {fileID: 8300000, guid: 184424c489ba0e64bb5162c161a0a6af, type: 3}
   triggerSound: {fileID: 8300000, guid: b26de335d92766842b5427a790b48bdc, type: 3}
+--- !u!114 &2618543710704616699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5277733942898682459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4444b23dcc8397459ebc3daf2ecdf75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isBuilding: 0
 --- !u!1 &6365579674731453736
 GameObject:
   m_ObjectHideFlags: 0

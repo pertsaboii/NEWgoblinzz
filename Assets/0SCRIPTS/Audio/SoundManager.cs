@@ -88,6 +88,7 @@ public class SoundManager : MonoBehaviour
             if (source.volume <= 0.08f)
             {
                 source.Stop();
+                source.volume = 1;
                 break;
             }
             yield return new WaitForSecondsRealtime(.05f);
